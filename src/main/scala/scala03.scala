@@ -1,3 +1,5 @@
+import org.apache.log4j.Logger
+
 object Activity {
 
   def main(args: Array[String]): Unit = {
@@ -5,24 +7,26 @@ object Activity {
     val firstElement: Int = 2
     val secondElement: Int = 3
     val thirdElement: Int = 4
+    val log = Logger.getLogger(this.getClass)
 
     val firstList = List(firstElement, secondElement, thirdElement)
-    println(process.doubleElements(firstList))
+    print(process.doubleElements(firstList))
 
     val fourthElement: Int = 4
     val fifthElement: Int = 5
     val sixthElement: Int = 6
 
     val secondList = List(fourthElement, fifthElement, sixthElement)
-    println(process.sumOfTwoList(firstList, secondList))
+    log.info(process.sumOfTwoList(firstList, secondList))
 
-    println(process.reverseList(firstList))
+    print(process.reverseList(firstList))
     val count = 1
     val partial = process.numberOfElementInList(count,_:List[Int])
-    println(partial(firstList))
+    log.info(partial(firstList))
+
 
     val location:Int = 2
-    println(process.kthElementOfList(location,firstList))
+    log.info(process.kthElementOfList(location,firstList))
 
   }
 }
